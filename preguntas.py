@@ -22,7 +22,8 @@ def pregunta_01():
     40
 
     """
-    return
+    filas=len(tbl0)
+    return filas 
 
 
 def pregunta_02():
@@ -33,7 +34,8 @@ def pregunta_02():
     4
 
     """
-    return
+    columnas=len(tbl0.columns)
+    return columnas 
 
 
 def pregunta_03():
@@ -50,7 +52,9 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+
+    registros=tbl0["_c1"].value_counts().sort_index()
+    return registros
 
 
 def pregunta_04():
@@ -65,7 +69,9 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    return
+
+    promedios=tbl0.groupby("_c1")["_c2"].mean()
+    return promedios
 
 
 def pregunta_05():
