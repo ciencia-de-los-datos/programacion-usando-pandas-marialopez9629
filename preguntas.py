@@ -159,7 +159,8 @@ def pregunta_09():
     39   39   E    5  1998-01-26  1998
 
     """
-    return
+    tbl0["year"]=tbl0["_c3"].apply(lambda date: date.split("-")[0])
+    return tbl0
 
 
 def pregunta_10():
@@ -176,7 +177,11 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return
+
+    tabla=pd.DataFrame(tbl0.groupby("_c1")["_c2"].apply(lambda values: ":".join(sorted(list(values.astype(str))))))
+    tabla=tabla.reset_index()
+    tabla=tabla.rename(columns={'_c1': '_c0', '_c2': '_c1'})
+    return tabla
 
 
 def pregunta_11():
