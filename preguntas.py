@@ -179,8 +179,8 @@ def pregunta_10():
     """
 
     tabla=pd.DataFrame(tbl0.groupby("_c1")["_c2"].apply(lambda values: ":".join(sorted(list(values.astype(str))))))
-    tabla=tabla.reset_index()
-    tabla=tabla.rename(columns={'_c1': '_c0', '_c2': '_c1'})
+    #tabla=tabla.reset_index()
+    #tabla=tabla.rename(columns={'_c1': '_c0', '_c2': '_c1'})
     return tabla
 
 
