@@ -236,4 +236,9 @@ def pregunta_13():
     E    275
     Name: _c5b, dtype: int64
     """
-    return
+    tbl2_subset=pd.DataFrame(tbl2.groupby("_c0")["_c5b"].sum())
+    tbl0_v2=tbl0.set_index("_c0")
+    tabla=pd.merge(tbl0_v2,tbl2_subset,left_index=True, right_index=True)
+    resultad=tabla.groupby("_c1")["_c5b"].sum()
+    
+    return resultad
