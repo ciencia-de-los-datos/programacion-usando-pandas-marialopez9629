@@ -199,7 +199,8 @@ def pregunta_11():
     39   39    a,d,f
     """
     tabla=pd.DataFrame(tbl1.groupby("_c0")["_c4"].apply(lambda value: ",".join(sorted(list(value.astype(str))))))
-    return tabla
+    tabla2=tabla.reset_index()
+    return tabla2
 
 
 def pregunta_12():
@@ -219,7 +220,8 @@ def pregunta_12():
     """
     tbl2["_c5"]=tbl2["_c5a"]+":"+tbl2["_c5b"].astype(str)
     tabla=pd.DataFrame(tbl2.groupby("_c0")["_c5"].apply(lambda value: ",".join(sorted(list(value)))))
-    return tabla
+    tabla2=tabla.reset_index()
+    return tabla2
 
 
 def pregunta_13():
